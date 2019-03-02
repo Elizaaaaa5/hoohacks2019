@@ -131,7 +131,17 @@ function game(){
         ctx.fillStyle="black";
         ctx.drawImage(brunelleIG, 620, 120, 128, 256);
         ctx.drawImage(upPIG,500,400,115,250);//draw player
-    }
+	}
+	else if(player[0]==750 && player[1]==250){
+		inRoom = false;
+		ctx.drawImage(hallwayIG, 0, 0, canv.width, canv.height);
+		ctx.drawImage(leftPIG,player[0],player[1],65,100);//draw player
+		ctx.font = "30px Comic Sans MS";
+		ctx.fillStyle="black";
+		ctx.textAlign = "center";
+		ctx.fillText("Hello there. Welcome to hoohacksHero!", canv.width/2, canv.height/2); 
+		
+	}
     else{
     ctx.drawImage(hallwayIG, 0, 0, canv.width, canv.height);
     ctx.fillStyle="black";
