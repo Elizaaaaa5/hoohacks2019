@@ -23,7 +23,7 @@ room_one_questions = [["x % y returns: \na) the remainder of x divided by y, \nb
                         ["what is my favorite kind of music?\na) smooth jazz, \nb) electric swing, \nc) the sound of silence, \nd) classical ballads","c"]];
 room2_count = 0;
 room_two_questions = [["what's the difference between ArrayList and array? \na) ArrayLists can only hold primitive types, \nb) ArrayLists can dynamically resize, \nc) Arrays are not supported in Java, \nd) Arrays are like stacks, ArrayLists like queues","b"],
-                        ["what's the difference between interface and abstract data type? \na) you can only implement ADTs, \nb) you can only implement interfaces, \nc) interfaces only use primitive types","a"],
+                        ["what's the difference between interface and abstract data type? \na) only ADTs contain implementations, \nb) only  interfaces contain implementations, \nc) interfaces only use primitive types","a"],
                         ["what's a static method?\na) a method that is unchanged, \nb) a publicly accessible instance of a class, \nc) a method that can be called without creating an instance","c"]]
 room3_count = 0;
 room_three_questions = [["convert hexadecimal to binary: 0xA455. \na) 0b1010010001010101, \nb) 0b1000011101010101 \nc) 0b0011110001011100, \nd) 0b1111111111111111","a"],
