@@ -27,7 +27,7 @@ window.onload=function(){
 	document.addEventListener("keydown",keyPush);
     document.addEventListener("keyup",keyLift);
     audio = [new Audio('1110 Theme.mp3'), new Audio('2110 Theme.mp3'), new Audio('2150 Theme.mp3'), new Audio('4102 Theme.mp3')];
-	timer = setInterval(game,100);
+	timer = setInterval(game,10);
 }
 room1_count = 0;
 room_one_questions = [["x % y returns: \na) The remainder of x divided by y \nb) The sum of x and y \nc) x to the power of y","a"],
@@ -166,22 +166,22 @@ function game(){
 function keyPush(event){//keypress
 	map[event.keyCode] = true;
 	if(map[37] && !inRoom){ //left
-        player[0] = player[0]-10;   
+        player[0] = player[0]-7;   
         escape = false;
         dir = "left";
 	}
 	else if(map[38] && !inRoom){ //up
-        player[1] = player[1]-10;   
+        player[1] = player[1]-7;   
         escape = false; 
         dir = "up"; 
 	}
 	else if(map[39] && !inRoom){ //right
-        player[0] = player[0]+10;     
+        player[0] = player[0]+7;     
         escape = false;
         dir = "right"; 
 	}
 	else if(map[40] && !inRoom){ //down
-        player[1] = player[1]+10; 
+        player[1] = player[1]+7; 
         escape = false; 
         dir = "down";    
     }
