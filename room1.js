@@ -22,21 +22,21 @@ window.onload=function(){
 	timer = setInterval(game,100);
 }
 room1_count = 0;
-room_one_questions = [["x % y returns: \na) the remainder of x divided by y, \nb) the sum of x and y, \nc) x to the power of y","a"],
-                        ["what is a string? \na) a natural number, \nb) an array of characters, \nc) a floating point number","b"],
-                        ["what is my favorite kind of music?\na) smooth jazz, \nb) electric swing, \nc) the sound of silence, \nd) classical ballads","c"]];
+room_one_questions = [["x % y returns: \na) The remainder of x divided by y \nb) The sum of x and y \nc) x to the power of y","a"],
+                        ["What is a string? \na) A natural number, \nb) An array of characters, \nc) A floating point number","b"],
+                        ["What is my favorite kind of music?\na) Smooth jazz \nb) Electric swing \nc) The sound of silence \nd) Classical ballads","c"]];
 room2_count = 0;
-room_two_questions = [["what's the difference between ArrayList and array? \na) ArrayLists can only hold primitive types, \nb) ArrayLists can dynamically resize, \nc) Arrays are not supported in Java, \nd) Arrays are like stacks, ArrayLists like queues","b"],
-                        ["what's the difference between interface and abstract data type? \na) only ADTs contain implementations, \nb) only  interfaces contain implementations, \nc) interfaces only use primitive types","a"],
-                        ["what's a static method?\na) a method that is unchanged, \nb) a publicly accessible instance of a class, \nc) a method that can be called without creating an instance","c"]]
+room_two_questions = [["What's the difference between ArrayList and array? \na) ArrayLists can only hold primitive types, \nb) ArrayLists can dynamically resize, \nc) Arrays are not supported in Java, \nd) Arrays are like stacks, ArrayLists like queues","b"],
+                        ["What's the difference between interface and abstract data type? \na) Only ADTs contain implementations \nb) Only  interfaces contain implementations \nc) Interfaces only use primitive types","a"],
+                        ["What's a static method?\na) A method that is unchanged \nb) A publicly accessible instance of a class \nc) A method that can be called without creating an instance","c"]]
 room3_count = 0;
-room_three_questions = [["convert hexadecimal to binary: 0xA455. \na) 0b1010010001010101, \nb) 0b1000011101010101 \nc) 0b0011110001011100, \nd) 0b1111111111111111","a"],
-                        ["difference between an AVL and binary tree? \na) AVL trees have red-black nodes, \nb) AVL trees have are self-balancing, \nc) binary trees have a faster runtime for search operations","b"],
-                        ["what is big-O for accessing a hash table?\na) O(n log n), \nb) O(1), \nc) O(n^2), \nd) O(2^n)","b"]]
+room_three_questions = [["Convert hexadecimal to binary: 0xA455. \na) 0b1010010001010101 \nb) 0b1000011101010101 \nc) 0b0011110001011100 \nd) 0b1111111111111111","a"],
+                        ["Difference between an AVL and binary tree? \na) AVL trees have red-black nodes \nb) AVL trees have are self-balancing \nc) Binary trees have a faster runtime for search operations","b"],
+                        ["What is big-O for accessing a hash table?\na) O(n log n) \nb) O(1) \nc) O(n^2) \nd) O(2^n)","b"]]
 room4_count = 0;
-room_four_questions = [["what is big-theta in terms of big O and big omega? \na) The union of big O and big omega, \nb) The intersection of big O and big omega, \nc) They are unrelated", "b"],
-                        ["which of the following sorts is stable? \na) heapsort, \nb) mergesort, \nc) selection, \nd) quicksort", "b"],
-                        ["what class of algorithm is Dijkstra's algorithm? \na) dynamic programming, \nb) divide and conquer, \nc) greedy algorithm", "c"]]
+room_four_questions = [["What is big-theta in terms of big O and big omega? \na) The union of big O and big omega, \nb) The intersection of big O and big omega \nc) They are unrelated", "b"],
+                        ["Which of the following sorts is stable? \na) Heapsort \nb) Mergesort \nc) Selection \nd) Quicksort", "b"],
+                        ["What class of algorithm is Dijkstra's algorithm? \na) Dynamic programming \nb) Divide and conquer, \nc) Greedy algorithm", "c"]]
 answer = "";
 escape = true;
 inRoom = false;
