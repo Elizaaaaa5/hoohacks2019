@@ -5,6 +5,12 @@ window.onload=function(){
     canv.style = "position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; margin: auto;";
 	roomIG = new Image();
     roomIG.src="classRoom1.jpg";
+    floyranIG = new Image();
+    floyranIG.src="floryan.png";
+    tychoIG = new Image();
+    tychoIG.src="tycho.png";
+    basitIG = new Image();
+    basitIG.src="basit.png";
     hallwayIG = new Image();
     hallwayIG.src = "hallway-bg.png"
 	document.addEventListener("keydown",keyPush);
@@ -34,10 +40,14 @@ map=[];
 room= "";
 player = [750,250];
 function game(){
+<<<<<<< HEAD
     if (!inRoom) {
         board.innerText = "";
     }
     if(player[0]>=610 && player[0]<= 610+64 && player[1]>= 490 && player[1] <= 490+80 && !escape ){ //room1
+=======
+    if(player[0]>=610 && player[0]<= 610+64 && player[1]>= 490 && player[1] <= 490+80 && !escape ){ //room1 1110
+>>>>>>> 8d34298b83f47d738e9da781e19a47026ee3f39e
         inRoom = true;
         ctx.drawImage(roomIG, 0, 0, canv.width, canv.height);
         if (room1_count < room_one_questions.length) {
@@ -51,9 +61,10 @@ function game(){
             board.innerText = "You may proceed to 2110. Good luck with that...\n\nPress 'ESC' to leave the room."; 
         }
         ctx.fillStyle="black";
+        ctx.drawImage(tychoIG, 620, 150, 110, 190);
         ctx.fillRect(500,400,50,150);//draw player
     }
-    else if(player[0]>=519 && player[0]<= 519+64 && player[1]>= 130 && player[1] <= 130+80 && !escape ) { //room2
+    else if(player[0]>=519 && player[0]<= 519+64 && player[1]>= 130 && player[1] <= 130+80 && !escape ) { //room2 2110
         inRoom = true;
         ctx.drawImage(roomIG, 0, 0, canv.width, canv.height);
         if (room2_count < room_two_questions.length) {
@@ -67,11 +78,13 @@ function game(){
             board.innerText = "Good work! Keep going!...\n\nPress 'ESC' to leave the room."
         }
         ctx.fillStyle="black";
+        ctx.drawImage(basitIG, 620, 150, 110, 190);
         ctx.fillRect(500,400,50,150);//draw player
     }
-    else if(player[0]>=328 && player[0]<= 328+64 && player[1]>= 490 && player[1] <= 490+80 && !escape ){ //room3
+    else if(player[0]>=328 && player[0]<= 328+64 && player[1]>= 490 && player[1] <= 490+80 && !escape ){ //room3 2150
         inRoom = true;
         ctx.drawImage(roomIG, 0, 0, canv.width, canv.height);
+<<<<<<< HEAD
         if (room3_count < room_three_questions.length) {
             board.innerText = room_three_questions[room3_count][0] + "\n\nScore: " + room3_count.toString();
             if (answer == room_three_questions[room3_count][1]) {
@@ -82,10 +95,16 @@ function game(){
         else {
             board.innerText = "You made it through the weed-out class! Impressive.\n\nPress 'ESC' to leave the room."
         }
+=======
+        ctx.fillStyle="white";
+	    ctx.font = "27px Georgia";
+        ctx.fillText("CS 2150 ", 200, 150);
+>>>>>>> 8d34298b83f47d738e9da781e19a47026ee3f39e
         ctx.fillStyle="black";
+        ctx.drawImage(floyranIG, 620, 150, 110, 190);
         ctx.fillRect(500,400,50,150);//draw player
     }
-    else if(player[0]>=190 && player[0]<= 190+64 && player[1]>= 130 && player[1] <= 130+80 && !escape ){ //room4
+    else if(player[0]>=190 && player[0]<= 190+64 && player[1]>= 130 && player[1] <= 130+80 && !escape ){ //room4 4102
         inRoom = true;
         ctx.drawImage(roomIG, 0, 0, canv.width, canv.height);
         if (room4_count < room_four_questions.length) {
