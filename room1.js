@@ -11,6 +11,8 @@ window.onload=function(){
     tychoIG.src="tycho.png";
     basitIG = new Image();
     basitIG.src="basit.png";
+    brunelleIG = new Image();
+    brunelleIG.src="brunelle.png";
     hallwayIG = new Image();
     hallwayIG.src = "hallway-bg.png"
 	document.addEventListener("keydown",keyPush);
@@ -108,6 +110,7 @@ function game(){
             board.innerText = "Now off to graduation... I guess...\n\nPress 'ESC' to leave the room."
         }
         ctx.fillStyle="black";
+        ctx.drawImage(brunelleIG, 620, 150, 110, 190);
         ctx.fillRect(500,400,50,150);//draw player
     }
     else{
