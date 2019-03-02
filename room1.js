@@ -6,6 +6,10 @@ window.onload=function(){
     roomIG.src="classRoom1.jpg";
     floyranIG = new Image();
     floyranIG.src="floryan.png";
+    tychoIG = new Image();
+    tychoIG.src="tycho.png";
+    basitIG = new Image();
+    basitIG.src="basit.png";
     hallwayIG = new Image();
     hallwayIG.src = "hallway-bg.png"
 	document.addEventListener("keydown",keyPush);
@@ -18,25 +22,27 @@ map=[];
 room= "";
 player = [750,250];
 function game(){
-    if(player[0]>=610 && player[0]<= 610+64 && player[1]>= 490 && player[1] <= 490+80 && !escape ){ //room1
+    if(player[0]>=610 && player[0]<= 610+64 && player[1]>= 490 && player[1] <= 490+80 && !escape ){ //room1 1110
         inRoom = true;
         ctx.drawImage(roomIG, 0, 0, canv.width, canv.height);
         ctx.fillStyle="white";
 	    ctx.font = "27px Georgia";
         ctx.fillText("CS 1110 ", 200, 150);
         ctx.fillStyle="black";
+        ctx.drawImage(tychoIG, 620, 150, 110, 190);
         ctx.fillRect(500,400,50,150);//draw player
     }
-    else if(player[0]>=519 && player[0]<= 519+64 && player[1]>= 130 && player[1] <= 130+80 && !escape ) { //room2
+    else if(player[0]>=519 && player[0]<= 519+64 && player[1]>= 130 && player[1] <= 130+80 && !escape ) { //room2 2110
         inRoom = true;
         ctx.drawImage(roomIG, 0, 0, canv.width, canv.height);
         ctx.fillStyle="white";
 	    ctx.font = "27px Georgia";
         ctx.fillText("CS 2110 ", 200, 150);
         ctx.fillStyle="black";
+        ctx.drawImage(basitIG, 620, 150, 110, 190);
         ctx.fillRect(500,400,50,150);//draw player
     }
-    else if(player[0]>=328 && player[0]<= 328+64 && player[1]>= 490 && player[1] <= 490+80 && !escape ){ //room3
+    else if(player[0]>=328 && player[0]<= 328+64 && player[1]>= 490 && player[1] <= 490+80 && !escape ){ //room3 2150
         inRoom = true;
         ctx.drawImage(roomIG, 0, 0, canv.width, canv.height);
         ctx.fillStyle="white";
@@ -46,7 +52,7 @@ function game(){
         ctx.drawImage(floyranIG, 620, 150, 110, 190);
         ctx.fillRect(500,400,50,150);//draw player
     }
-    else if(player[0]>=190 && player[0]<= 190+64 && player[1]>= 130 && player[1] <= 130+80 && !escape ){ //room4
+    else if(player[0]>=190 && player[0]<= 190+64 && player[1]>= 130 && player[1] <= 130+80 && !escape ){ //room4 4102
         inRoom = true;
         ctx.drawImage(roomIG, 0, 0, canv.width, canv.height);
         ctx.fillStyle="white";
