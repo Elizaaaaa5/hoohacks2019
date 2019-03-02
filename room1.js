@@ -17,7 +17,8 @@ window.onload=function(){
     hallwayIG = new Image();
     hallwayIG.src = "hallway-bg.png"
 	document.addEventListener("keydown",keyPush);
-	document.addEventListener("keyup",keyLift);
+    document.addEventListener("keyup",keyLift);
+    audio = [new Audio('1110 Theme.mp3'), new Audio('2110 Theme.mp3'), new Audio('2150 Theme.mp3'), new Audio('4102 Theme.mp3')];
 	timer = setInterval(game,100);
 }
 room1_count = 0;
@@ -48,6 +49,7 @@ function game(){
     }
     if(player[0]>=610 && player[0]<= 610+64 && player[1]>= 490 && player[1] <= 490+80 && !escape ){ //room1
         inRoom = true;
+        audio[0].play();
         ctx.drawImage(roomIG, 0, 0, canv.width, canv.height);
         if (room1_count < room_one_questions.length) {
             board.innerText = room_one_questions[room1_count][0] + "\n\nScore: " + room1_count.toString();
@@ -58,6 +60,7 @@ function game(){
         } 
         else {
             board.innerText = "You may proceed to 2110. Good luck with that...\n\nPress 'ESC' to leave the room."; 
+            audio[0].pause();
         }
         ctx.fillStyle="black";
         ctx.drawImage(tychoIG, 620, 120, 128, 256);
@@ -65,6 +68,7 @@ function game(){
     }
     else if(player[0]>=519 && player[0]<= 519+64 && player[1]>= 130 && player[1] <= 130+80 && !escape ) { //room2 2110
         inRoom = true;
+        audio[1].play();
         ctx.drawImage(roomIG, 0, 0, canv.width, canv.height);
         if (room2_count < room_two_questions.length) {
             board.innerText = room_two_questions[room2_count][0] + "\n\nScore: " + room2_count.toString();
@@ -75,6 +79,7 @@ function game(){
         } 
         else {
             board.innerText = "Good work! Keep going!...\n\nPress 'ESC' to leave the room."
+            audio[1].pause();
         }
         ctx.fillStyle="black";
         ctx.drawImage(basitIG, 620, 120, 128, 256);
@@ -82,6 +87,7 @@ function game(){
     }
     else if(player[0]>=328 && player[0]<= 328+64 && player[1]>= 490 && player[1] <= 490+80 && !escape ){ //room3 2150
         inRoom = true;
+        audio[2].play();
         ctx.drawImage(roomIG, 0, 0, canv.width, canv.height);
         if (room3_count < room_three_questions.length) {
             board.innerText = room_three_questions[room3_count][0] + "\n\nScore: " + room3_count.toString();
@@ -92,6 +98,7 @@ function game(){
         } 
         else {
             board.innerText = "You made it through the weed-out class! Impressive.\n\nPress 'ESC' to leave the room."
+            audio[2].pause();
         }
         ctx.fillStyle="black";
         ctx.drawImage(floyranIG, 620, 120, 128, 256);
@@ -99,6 +106,7 @@ function game(){
     }
     else if(player[0]>=190 && player[0]<= 190+64 && player[1]>= 130 && player[1] <= 130+80 && !escape ){ //room4 4102
         inRoom = true;
+        audio[3].play();
         ctx.drawImage(roomIG, 0, 0, canv.width, canv.height);
         if (room4_count < room_four_questions.length) {
             board.innerText = room_four_questions[room4_count][0] + "\n\nScore: " + room4_count.toString();
@@ -109,6 +117,7 @@ function game(){
         } 
         else {
             board.innerText = "Now off to graduation... I guess...\n\nPress 'ESC' to leave the room."
+            audio[3].pause();
         }
         ctx.fillStyle="black";
         ctx.drawImage(brunelleIG, 620, 120, 128, 256);
