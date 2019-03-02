@@ -64,6 +64,7 @@ map=[];
 room= "";
 player = [750,250];
 function game(){
+    score = document.getElementById("score").innerHTML = totalCorrect;
     if (!instructionsDone) {
         if (page < instructions_list.length ) {
             instructions.innerText = instructions_list[page];
