@@ -56,7 +56,7 @@ function game(){
     if (!inRoom) {
         board.innerText = "";
     }
-    if(player[0]>=610 && player[0]<= 610+64 && player[1]>= 490 && player[1] <= 490+80 && !escape ){ //room1
+    if(player[0]>=610 && player[0]<= 610+64 && player[1]>= 380 && player[1] <= 490+80 && !escape ){ //room1
         inRoom = true;
         audio[0].play();
         ctx.drawImage(roomIG, 0, 0, canv.width, canv.height);
@@ -94,7 +94,7 @@ function game(){
         ctx.drawImage(basitIG, 620, 120, 128, 256);
         ctx.drawImage(upPIG,500,400,115,250);//draw player
     }
-    else if(player[0]>=328 && player[0]<= 328+64 && player[1]>= 490 && player[1] <= 490+80 && !escape ){ //room3 2150
+    else if(player[0]>=328 && player[0]<= 328+64 && player[1]>= 380 && player[1] <= 490+80 && !escape ){ //room3 2150
         inRoom = true;
         audio[2].play();
         ctx.drawImage(roomIG, 0, 0, canv.width, canv.height);
