@@ -15,6 +15,8 @@ window.onload=function(){
     basitIG.src="basit.png";
     brunelleIG = new Image();
     brunelleIG.src="brunelle.png";
+    grimshawIG = new Image();
+    grimshawIG.src="grimshaw.png";
     hallwayIG = new Image();
     hallwayIG.src = "hallway-bg.png"
     upPIG = new Image();
@@ -27,7 +29,7 @@ window.onload=function(){
     leftPIG.src = "leftP.png"
 	document.addEventListener("keydown",keyPush);
     document.addEventListener("keyup",keyLift);
-    audio = [new Audio('1110 Theme.mp3'), new Audio('2110 Theme.mp3'), new Audio('2150 Theme.mp3'), new Audio('4102 Theme.mp3')];
+    audio = [new Audio('1110 Theme.mp3'), new Audio('2110 Theme.mp3'), new Audio('2150 Theme.mp3'), new Audio('4102 Theme.mp3'), new Audio('OS Theme.mp3')];
     timer = setInterval(game,10);
     totalCorrect = 0;
 }
@@ -48,6 +50,10 @@ room4_count = 0;
 room_four_questions = [["What is big-theta in terms of big O and big omega? \na) The union of big O and big omega, \nb) The intersection of big O and big omega \nc) They are unrelated", "b"],
                         ["Which of the following sorts is stable? \na) Heapsort \nb) Mergesort \nc) Selection \nd) Quicksort", "b"],
                         ["What class of algorithm is Dijkstra's algorithm? \na) Dynamic programming \nb) Divide and conquer, \nc) Greedy algorithm", "c"]]
+room5_count = 0;
+room_five_questions =  [["NOT SO FAST! YOU THOUGHT YOU COULD GRADUATE WITHOUT OPERATING SYSTEMS? THINK AGAIN!... Press 'a' to continue", "a"],
+                        ["Linux's Scheduler adjusts timeslices based on the number of processes running. When many are running, this adjustment is likely to improve... \na) the mean wait time experienced by processes \nb) the compute throughput of the system \nc) the fairness of the amounts of processor time given to each process over a long period of time \nd)  the amount of stack space required in the kernel", "a"],
+                        ["The XV6 scheduler scans the proc table looking for a ready to run process. This is slow and non scalable. An alternative that is faster is to: \na) Randomly select a task to run and run it. \nb) Maintain a linked list of ready to run processes and always run the first, and place newly ready processes at the end. \nc) Maintain a hash table of ready to run processes keyed on priority. \nd) Maintain a stack of proc table pointers and pop processes to run them and push when they are ready to run.", "b"]]
 answer = "";
 dir = "left";
 instructionsDone = false;
@@ -155,6 +161,26 @@ function game(){
         ctx.fillStyle="black";
         ctx.drawImage(brunelleIG, 620, 120, 128, 256);
         ctx.drawImage(upPIG,500,400,115,250);//draw player
+    }
+    else if(player[0]>= 30 && player[0]<= 30+150 && player[1]>=150  && player[1] <=150+130  && !escape && totalCorrect >=12 && totalCorrect<=15 ){ //room4 4102
+        inRoom = true;
+        audio[4].play();
+        ctx.drawImage(roomIG, 0, 0, canv.width, canv.height);
+        if (room5_count < room_five_questions.length) {
+            board.innerText = room_five_questions[room5_count][0] + "\n\nScore: " + room5_count.toString();
+            if (answer == room_five_questions[room5_count][1]) {
+                room5_count++;
+                answer="";
+                totalCorrect++;
+            }
+        } 
+        else {
+            board.innerText = "NO! IT CANNOT BE! IT IS IMPOSSIBLE!!!!!!... Press 'ESC' to graduate";
+            audio[4].pause();
+        }
+        ctx.fillStyle="black";
+        ctx.drawImage(grimshawIG, 620, 120, 128, 256);
+        ctx.drawImage(upPIG,500,400,115,250);//draw player
 	}
     else{
     ctx.drawImage(hallwayIG, 0, 0, canv.width, canv.height);
@@ -175,7 +201,9 @@ function game(){
     // ctx.fillRect(519,130,64,80);//door2
     // ctx.fillRect(190,130,64,80);//door4
     // ctx.fillRect(328,490,64,80);//door3
-	// ctx.fillRect(610,490,64,80);//door1    
+    // ctx.fillRect(610,490,64,80);//door1    
+    
+    //ctx.fillRect(30,450,150,130);//door5
 }
 function keyPush(event){//keypress
 	map[event.keyCode] = true;
