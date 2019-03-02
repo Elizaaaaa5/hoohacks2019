@@ -36,10 +36,10 @@ window.onload=function(){
 instructions_list = ["Hello there. Welcome to HooHacks Hero! \n Press space to continue.", "Use up, down, left, and right keys to navigate. Progress through CS classes 1110, 2110, 2150, and 4102 in order to graduate!"];
 room1_count = 0;
 room_one_questions = [["x % y returns: \na) The remainder of x divided by y \nb) The sum of x and y \nc) x to the power of y","a"],
-                        ["What is a string? \na) A natural number, \nb) An array of characters, \nc) A floating point number","b"],
+                        ["What is a string? \na) A natural number \nb) An array of characters \nc) A floating point number","b"],
                         ["What is my favorite kind of music?\na) Smooth jazz \nb) Electric swing \nc) The sound of silence \nd) Classical ballads","c"]];
 room2_count = 0;
-room_two_questions = [["What's the difference between ArrayList and array? \na) ArrayLists can only hold primitive types, \nb) ArrayLists can dynamically resize, \nc) Arrays are not supported in Java, \nd) Arrays are like stacks, ArrayLists like queues","b"],
+room_two_questions = [["What's the difference between ArrayList and array? \na) ArrayLists can only hold primitive types \nb) ArrayLists can dynamically resize, \nc) Arrays are not supported in Java, \nd) Arrays are like stacks, ArrayLists like queues","b"],
                         ["What's the difference between interface and abstract data type? \na) Only ADTs contain implementations \nb) Only  interfaces contain implementations \nc) Interfaces only use primitive types","a"],
                         ["What's a static method?\na) A method that is unchanged \nb) A publicly accessible instance of a class \nc) A method that can be called without creating an instance","c"]]
 room3_count = 0;
@@ -47,9 +47,9 @@ room_three_questions = [["Convert hexadecimal to binary: 0xA455. \na) 0b10100100
                         ["Difference between an AVL and binary tree? \na) AVL trees have red-black nodes \nb) AVL trees have are self-balancing \nc) Binary trees have a faster runtime for search operations","b"],
                         ["What is big-O for accessing a hash table?\na) O(n log n) \nb) O(1) \nc) O(n^2) \nd) O(2^n)","b"]]
 room4_count = 0;
-room_four_questions = [["What is big-theta in terms of big O and big omega? \na) The union of big O and big omega, \nb) The intersection of big O and big omega \nc) They are unrelated", "b"],
+room_four_questions = [["What is big-theta in terms of big O and big omega? \na) The union of big O and big omega \nb) The intersection of big O and big omega \nc) They are unrelated", "b"],
                         ["Which of the following sorts is stable? \na) Heapsort \nb) Mergesort \nc) Selection \nd) Quicksort", "b"],
-                        ["What class of algorithm is Dijkstra's algorithm? \na) Dynamic programming \nb) Divide and conquer, \nc) Greedy algorithm", "c"]]
+                        ["What class of algorithm is Dijkstra's algorithm? \na) Dynamic programming \nb) Divide and conquer \nc) Greedy algorithm", "c"]]
 room5_count = 0;
 room_five_questions =  [["NOT SO FAST! YOU THOUGHT YOU COULD GRADUATE WITHOUT OPERATING SYSTEMS? THINK AGAIN!... Press 'a' to continue", "a"],
                         ["Linux's Scheduler adjusts timeslices based on the number of processes running. When many are running, this adjustment is likely to improve... \na) the mean wait time experienced by processes \nb) the compute throughput of the system \nc) the fairness of the amounts of processor time given to each process over a long period of time \nd)  the amount of stack space required in the kernel", "a"],
