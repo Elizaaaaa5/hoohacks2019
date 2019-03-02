@@ -1,6 +1,7 @@
 window.onload=function(){
 	canv=document.getElementById("gc");
     board=document.getElementById("chalkboard");
+    instructions=document.getElementById("instructions");
     ctx=canv.getContext("2d");
     ctx.imageSmoothingEnabled = false;
     canv.style = "position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; margin: auto;";
@@ -30,6 +31,7 @@ window.onload=function(){
     timer = setInterval(game,10);
     totalCorrect = 0;
 }
+instructions_list = ["Hello there. Welcome to HooHacks Hero! \n Press space to continue.", "Use up, down, left, and right keys to navigate. Progress through CS classes 1110, 2110, 2150, and 4102 in order to graduate!"];
 room1_count = 0;
 room_one_questions = [["x % y returns: \na) The remainder of x divided by y \nb) The sum of x and y \nc) x to the power of y","a"],
                         ["What is a string? \na) A natural number, \nb) An array of characters, \nc) A floating point number","b"],
@@ -48,12 +50,29 @@ room_four_questions = [["What is big-theta in terms of big O and big omega? \na)
                         ["What class of algorithm is Dijkstra's algorithm? \na) Dynamic programming \nb) Divide and conquer, \nc) Greedy algorithm", "c"]]
 answer = "";
 dir = "left";
+instructionsDone = false;
+page = 0;
 escape = true;
 inRoom = false;
 map=[];
 room= "";
 player = [750,250];
 function game(){
+    if (!instructionsDone) {
+        if (page < instructions_list.length ) {
+            instructions.innerText = instructions_list[page];
+            if (answer == "space") {
+                page++;
+                answer = "";
+            }
+        }
+        else {
+            instructionsDone = true;
+        }
+    }
+    else {
+        instructions.innerText = "";
+    }
     if (!inRoom) {
         board.innerText = "";
     }
@@ -137,16 +156,6 @@ function game(){
         ctx.drawImage(brunelleIG, 620, 120, 128, 256);
         ctx.drawImage(upPIG,500,400,115,250);//draw player
 	}
-	else if(player[0]==750 && player[1]==250){
-		inRoom = false;
-		ctx.drawImage(hallwayIG, 0, 0, canv.width, canv.height);
-		ctx.drawImage(leftPIG,player[0],player[1],65,100);//draw player
-		ctx.font = "30px Comic Sans MS";
-		ctx.fillStyle="black";
-		ctx.textAlign = "center";
-		ctx.fillText("Hello there. Welcome to hoohacksHero!", canv.width/2, canv.height/2); 
-		
-	}
     else{
     ctx.drawImage(hallwayIG, 0, 0, canv.width, canv.height);
     ctx.fillStyle="black";
@@ -207,6 +216,9 @@ function keyPush(event){//keypress
     }
     if (event.keyCode == 6 && inRoom) {
         answer = "d";
+    }
+    if (event.keyCode == 32) {
+        answer = "space";
     }
 }
 function keyLift(event){
