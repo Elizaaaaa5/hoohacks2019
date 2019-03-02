@@ -2,6 +2,7 @@ window.onload=function(){
 	canv=document.getElementById("gc");
     board=document.getElementById("chalkboard");
     ctx=canv.getContext("2d");
+    ctx.imageSmoothingEnabled = false;
     canv.style = "position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; margin: auto;";
 	roomIG = new Image();
     roomIG.src="classRoom1.jpg";
