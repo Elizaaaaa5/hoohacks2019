@@ -27,7 +27,8 @@ window.onload=function(){
 	document.addEventListener("keydown",keyPush);
     document.addEventListener("keyup",keyLift);
     audio = [new Audio('1110 Theme.mp3'), new Audio('2110 Theme.mp3'), new Audio('2150 Theme.mp3'), new Audio('4102 Theme.mp3')];
-	timer = setInterval(game,10);
+    timer = setInterval(game,10);
+    totalCorrect = 0;
 }
 room1_count = 0;
 room_one_questions = [["x % y returns: \na) The remainder of x divided by y \nb) The sum of x and y \nc) x to the power of y","a"],
@@ -56,7 +57,7 @@ function game(){
     if (!inRoom) {
         board.innerText = "";
     }
-    if(player[0]>=610 && player[0]<= 610+64 && player[1]>= 380 && player[1] <= 490+80 && !escape ){ //room1
+    if(player[0]>=610 && player[0]<= 610+64 && player[1]>= 380 && player[1] <= 490+80 && !escape && totalCorrect >=0 && totalCorrect<=3){ //room1
         inRoom = true;
         audio[0].play();
         ctx.drawImage(roomIG, 0, 0, canv.width, canv.height);
@@ -65,6 +66,7 @@ function game(){
             if (answer == room_one_questions[room1_count][1]) {
                 room1_count++;
                 answer="";
+                totalCorrect++;
             }
         } 
         else {
@@ -75,7 +77,7 @@ function game(){
         ctx.drawImage(tychoIG, 620, 120, 128, 256);
         ctx.drawImage(upPIG,500,400,115,250);//draw player
     }
-    else if(player[0]>=519 && player[0]<= 519+64 && player[1]>= 130 && player[1] <= 130+80 && !escape ) { //room2 2110
+    else if(player[0]>=519 && player[0]<= 519+64 && player[1]>= 130 && player[1] <= 130+80 && !escape && totalCorrect >=3 && totalCorrect<=6 ) { //room2 2110
         inRoom = true;
         audio[1].play();
         ctx.drawImage(roomIG, 0, 0, canv.width, canv.height);
@@ -84,6 +86,7 @@ function game(){
             if (answer == room_two_questions[room2_count][1]) {
                 room2_count++;
                 answer="";
+                totalCorrect++;
             }
         } 
         else {
@@ -94,7 +97,7 @@ function game(){
         ctx.drawImage(basitIG, 620, 120, 128, 256);
         ctx.drawImage(upPIG,500,400,115,250);//draw player
     }
-    else if(player[0]>=328 && player[0]<= 328+64 && player[1]>= 380 && player[1] <= 490+80 && !escape ){ //room3 2150
+    else if(player[0]>=328 && player[0]<= 328+64 && player[1]>= 380 && player[1] <= 490+80 && !escape && totalCorrect >=6 && totalCorrect<=9  ){ //room3 2150
         inRoom = true;
         audio[2].play();
         ctx.drawImage(roomIG, 0, 0, canv.width, canv.height);
@@ -103,6 +106,7 @@ function game(){
             if (answer == room_three_questions[room3_count][1]) {
                 room3_count++;
                 answer="";
+                totalCorrect++;
             }
         } 
         else {
@@ -113,7 +117,7 @@ function game(){
         ctx.drawImage(floyranIG, 620, 120, 128, 256);
         ctx.drawImage(upPIG,500,400,115,250);//draw player
     }
-    else if(player[0]>=190 && player[0]<= 190+64 && player[1]>= 130 && player[1] <= 130+80 && !escape ){ //room4 4102
+    else if(player[0]>=190 && player[0]<= 190+64 && player[1]>= 130 && player[1] <= 130+80 && !escape && totalCorrect >=9 && totalCorrect<=12 ){ //room4 4102
         inRoom = true;
         audio[3].play();
         ctx.drawImage(roomIG, 0, 0, canv.width, canv.height);
@@ -122,6 +126,7 @@ function game(){
             if (answer == room_four_questions[room4_count][1]) {
                 room4_count++;
                 answer="";
+                totalCorrect++;
             }
         } 
         else {
