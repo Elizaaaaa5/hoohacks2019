@@ -16,6 +16,14 @@ window.onload=function(){
     brunelleIG.src="brunelle.png";
     hallwayIG = new Image();
     hallwayIG.src = "hallway-bg.png"
+    upPIG = new Image();
+    upPIG.src = "upP.png"
+    downPIG = new Image();
+    downPIG.src = "downP.png"
+    rightPIG = new Image();
+    rightPIG.src = "rightP.png"
+    leftPIG = new Image();
+    leftPIG.src = "leftP.png"
 	document.addEventListener("keydown",keyPush);
     document.addEventListener("keyup",keyLift);
     audio = [new Audio('1110 Theme.mp3'), new Audio('2110 Theme.mp3'), new Audio('2150 Theme.mp3'), new Audio('4102 Theme.mp3')];
@@ -38,6 +46,7 @@ room_four_questions = [["what is big-theta in terms of big O and big omega? \na)
                         ["which of the following sorts is stable? \na) heapsort, \nb) mergesort, \nc) selection, \nd) quicksort", "b"],
                         ["what class of algorithm is Dijkstra's algorithm? \na) dynamic programming, \nb) divide and conquer, \nc) greedy algorithm", "c"]]
 answer = "";
+dir = "left";
 escape = true;
 inRoom = false;
 map=[];
@@ -64,7 +73,7 @@ function game(){
         }
         ctx.fillStyle="black";
         ctx.drawImage(tychoIG, 620, 120, 128, 256);
-        ctx.fillRect(500,400,50,150);//draw player
+        ctx.drawImage(upPIG,500,400,115,250);//draw player
     }
     else if(player[0]>=519 && player[0]<= 519+64 && player[1]>= 130 && player[1] <= 130+80 && !escape ) { //room2 2110
         inRoom = true;
@@ -83,7 +92,7 @@ function game(){
         }
         ctx.fillStyle="black";
         ctx.drawImage(basitIG, 620, 120, 128, 256);
-        ctx.fillRect(500,400,50,150);//draw player
+        ctx.drawImage(upPIG,500,400,115,250);//draw player
     }
     else if(player[0]>=328 && player[0]<= 328+64 && player[1]>= 490 && player[1] <= 490+80 && !escape ){ //room3 2150
         inRoom = true;
@@ -102,7 +111,7 @@ function game(){
         }
         ctx.fillStyle="black";
         ctx.drawImage(floyranIG, 620, 120, 128, 256);
-        ctx.fillRect(500,400,50,150);//draw player
+        ctx.drawImage(upPIG,500,400,115,250);//draw player
     }
     else if(player[0]>=190 && player[0]<= 190+64 && player[1]>= 130 && player[1] <= 130+80 && !escape ){ //room4 4102
         inRoom = true;
@@ -121,12 +130,23 @@ function game(){
         }
         ctx.fillStyle="black";
         ctx.drawImage(brunelleIG, 620, 120, 128, 256);
-        ctx.fillRect(500,400,50,150);//draw player
+        ctx.drawImage(upPIG,500,400,115,250);//draw player
     }
     else{
     ctx.drawImage(hallwayIG, 0, 0, canv.width, canv.height);
     ctx.fillStyle="black";
-    ctx.fillRect(player[0],player[1],50,50);//draw player
+    if(dir=="left"){
+        ctx.drawImage(leftPIG,player[0],player[1],65,100);//draw player
+    }
+    else if(dir=="up"){
+        ctx.drawImage(upPIG,player[0],player[1],65,100);//draw player
+    }
+    else if(dir=="right"){
+        ctx.drawImage(rightPIG,player[0],player[1],65,100);//draw player
+    }
+    else if(dir=="down"){
+        ctx.drawImage(downPIG,player[0],player[1],65,100);//draw player
+    }
     }
     // ctx.fillRect(519,130,64,80);//door2
     // ctx.fillRect(190,130,64,80);//door4
@@ -138,18 +158,22 @@ function keyPush(event){//keypress
 	if(map[37] && !inRoom){ //left
         player[0] = player[0]-10;   
         escape = false;
+        dir = "left";
 	}
 	else if(map[38] && !inRoom){ //up
         player[1] = player[1]-10;   
-        escape = false;  
+        escape = false; 
+        dir = "up"; 
 	}
 	else if(map[39] && !inRoom){ //right
         player[0] = player[0]+10;     
         escape = false;
+        dir = "right"; 
 	}
 	else if(map[40] && !inRoom){ //down
         player[1] = player[1]+10; 
-        escape = false;    
+        escape = false; 
+        dir = "down";    
     }
     else if(map[27]){ //esc
         escape = true;
