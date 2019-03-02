@@ -40,14 +40,10 @@ map=[];
 room= "";
 player = [750,250];
 function game(){
-<<<<<<< HEAD
     if (!inRoom) {
         board.innerText = "";
     }
     if(player[0]>=610 && player[0]<= 610+64 && player[1]>= 490 && player[1] <= 490+80 && !escape ){ //room1
-=======
-    if(player[0]>=610 && player[0]<= 610+64 && player[1]>= 490 && player[1] <= 490+80 && !escape ){ //room1 1110
->>>>>>> 8d34298b83f47d738e9da781e19a47026ee3f39e
         inRoom = true;
         ctx.drawImage(roomIG, 0, 0, canv.width, canv.height);
         if (room1_count < room_one_questions.length) {
@@ -84,7 +80,6 @@ function game(){
     else if(player[0]>=328 && player[0]<= 328+64 && player[1]>= 490 && player[1] <= 490+80 && !escape ){ //room3 2150
         inRoom = true;
         ctx.drawImage(roomIG, 0, 0, canv.width, canv.height);
-<<<<<<< HEAD
         if (room3_count < room_three_questions.length) {
             board.innerText = room_three_questions[room3_count][0] + "\n\nScore: " + room3_count.toString();
             if (answer == room_three_questions[room3_count][1]) {
@@ -95,11 +90,6 @@ function game(){
         else {
             board.innerText = "You made it through the weed-out class! Impressive.\n\nPress 'ESC' to leave the room."
         }
-=======
-        ctx.fillStyle="white";
-	    ctx.font = "27px Georgia";
-        ctx.fillText("CS 2150 ", 200, 150);
->>>>>>> 8d34298b83f47d738e9da781e19a47026ee3f39e
         ctx.fillStyle="black";
         ctx.drawImage(floyranIG, 620, 150, 110, 190);
         ctx.fillRect(500,400,50,150);//draw player
@@ -119,7 +109,8 @@ function game(){
         }
         ctx.fillStyle="black";
         ctx.fillRect(500,400,50,150);//draw player
-    }else{
+    }
+    else{
     ctx.drawImage(hallwayIG, 0, 0, canv.width, canv.height);
     ctx.fillStyle="black";
     ctx.fillRect(player[0],player[1],50,50);//draw player
