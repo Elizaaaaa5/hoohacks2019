@@ -88,7 +88,7 @@ function game(){
         audio[0].play();
         ctx.drawImage(roomIG, 0, 0, canv.width, canv.height);
         if (room1_count < room_one_questions.length) {
-            board.innerText = room_one_questions[room1_count][0] + "\n\nScore: " + room1_count.toString();
+            board.innerText = room_one_questions[room1_count][0];
             if (answer == room_one_questions[room1_count][1]) {
                 room1_count++;
                 answer="";
@@ -108,7 +108,7 @@ function game(){
         audio[1].play();
         ctx.drawImage(roomIG, 0, 0, canv.width, canv.height);
         if (room2_count < room_two_questions.length) {
-            board.innerText = room_two_questions[room2_count][0] + "\n\nScore: " + room2_count.toString();
+            board.innerText = room_two_questions[room2_count][0];
             if (answer == room_two_questions[room2_count][1]) {
                 room2_count++;
                 answer="";
@@ -128,7 +128,7 @@ function game(){
         audio[2].play();
         ctx.drawImage(roomIG, 0, 0, canv.width, canv.height);
         if (room3_count < room_three_questions.length) {
-            board.innerText = room_three_questions[room3_count][0] + "\n\nScore: " + room3_count.toString();
+            board.innerText = room_three_questions[room3_count][0] ;
             if (answer == room_three_questions[room3_count][1]) {
                 room3_count++;
                 answer="";
@@ -148,7 +148,7 @@ function game(){
         audio[3].play();
         ctx.drawImage(roomIG, 0, 0, canv.width, canv.height);
         if (room4_count < room_four_questions.length) {
-            board.innerText = room_four_questions[room4_count][0] + "\n\nScore: " + room4_count.toString();
+            board.innerText = room_four_questions[room4_count][0];
             if (answer == room_four_questions[room4_count][1]) {
                 room4_count++;
                 answer="";
@@ -163,12 +163,12 @@ function game(){
         ctx.drawImage(brunelleIG, 620, 120, 128, 256);
         ctx.drawImage(upPIG,500,400,115,250);//draw player
     }
-    else if(player[0]>= 30 && player[0]<= 30+150 && player[1]>=150  && player[1] <=150+130  && !escape && totalCorrect >=12 && totalCorrect<=15 ){ //room4 4102
+    else if(player[0]>= 30 && player[0]<= 30+150 && player[1]>=450  && player[1] <=450+130  && !escape && totalCorrect >=12 && totalCorrect<=15 ){ //room4 4102
         inRoom = true;
         audio[4].play();
         ctx.drawImage(roomIG, 0, 0, canv.width, canv.height);
         if (room5_count < room_five_questions.length) {
-            board.innerText = room_five_questions[room5_count][0] + "\n\nScore: " + room5_count.toString();
+            board.innerText = room_five_questions[room5_count][0];
             if (answer == room_five_questions[room5_count][1]) {
                 room5_count++;
                 answer="";
