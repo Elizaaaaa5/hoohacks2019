@@ -4,6 +4,8 @@ window.onload=function(){
     canv.style = "position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; margin: auto; border:2px solid blue";
 	roomIG = new Image();
     roomIG.src="classRoom1.jpg";
+    floyranIG = new Image();
+    floyranIG.src="floryan.png";
     hallwayIG = new Image();
     hallwayIG.src = "hallway-bg.png"
 	document.addEventListener("keydown",keyPush);
@@ -39,8 +41,9 @@ function game(){
         ctx.drawImage(roomIG, 0, 0, canv.width, canv.height);
         ctx.fillStyle="white";
 	    ctx.font = "27px Georgia";
-        ctx.fillText("CS 3240 ", 200, 150);
+        ctx.fillText("CS 2150 ", 200, 150);
         ctx.fillStyle="black";
+        ctx.drawImage(floyranIG, 620, 150, 110, 190);
         ctx.fillRect(500,400,50,150);//draw player
     }
     else if(player[0]>=190 && player[0]<= 190+64 && player[1]>= 130 && player[1] <= 130+80 && !escape ){ //room4
