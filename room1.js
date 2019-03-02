@@ -60,7 +60,7 @@ function game(){
             board.innerText = "You may proceed to 2110. Good luck with that...\n\nPress 'ESC' to leave the room."; 
         }
         ctx.fillStyle="black";
-        ctx.drawImage(tychoIG, 620, 150, 110, 190);
+        ctx.drawImage(tychoIG, 620, 120, 128, 256);
         ctx.fillRect(500,400,50,150);//draw player
     }
     else if(player[0]>=519 && player[0]<= 519+64 && player[1]>= 130 && player[1] <= 130+80 && !escape ) { //room2 2110
@@ -77,7 +77,7 @@ function game(){
             board.innerText = "Good work! Keep going!...\n\nPress 'ESC' to leave the room."
         }
         ctx.fillStyle="black";
-        ctx.drawImage(basitIG, 620, 150, 110, 190);
+        ctx.drawImage(basitIG, 620, 120, 128, 256);
         ctx.fillRect(500,400,50,150);//draw player
     }
     else if(player[0]>=328 && player[0]<= 328+64 && player[1]>= 490 && player[1] <= 490+80 && !escape ){ //room3 2150
@@ -94,7 +94,7 @@ function game(){
             board.innerText = "You made it through the weed-out class! Impressive.\n\nPress 'ESC' to leave the room."
         }
         ctx.fillStyle="black";
-        ctx.drawImage(floyranIG, 620, 150, 110, 190);
+        ctx.drawImage(floyranIG, 620, 120, 128, 256);
         ctx.fillRect(500,400,50,150);//draw player
     }
     else if(player[0]>=190 && player[0]<= 190+64 && player[1]>= 130 && player[1] <= 130+80 && !escape ){ //room4 4102
@@ -111,7 +111,7 @@ function game(){
             board.innerText = "Now off to graduation... I guess...\n\nPress 'ESC' to leave the room."
         }
         ctx.fillStyle="black";
-        ctx.drawImage(brunelleIG, 620, 150, 110, 190);
+        ctx.drawImage(brunelleIG, 620, 120, 128, 256);
         ctx.fillRect(500,400,50,150);//draw player
     }
     else{
