@@ -1,6 +1,7 @@
 window.onload=function(){
 	canv=document.getElementById("gc");
-	ctx=canv.getContext("2d");
+    ctx=canv.getContext("2d");
+    canv.style = "position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; margin: auto; border:2px solid blue";
 	roomIG = new Image();
     roomIG.src="classRoom1.jpg";
     hallwayIG = new Image();
