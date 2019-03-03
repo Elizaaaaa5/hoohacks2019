@@ -2,6 +2,7 @@ window.onload=function(){
 	canv=document.getElementById("gc");
     board=document.getElementById("chalkboard");
     instructions=document.getElementById("instructions");
+    graduation = document.getElementById("grad");
     ctx=canv.getContext("2d");
     ctx.imageSmoothingEnabled = false;
     canv.style = "position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; margin: auto;";
@@ -27,6 +28,8 @@ window.onload=function(){
     rightPIG.src = "rightP.png"
     leftPIG = new Image();
     leftPIG.src = "leftP.png"
+    graduationIG = new Image();
+    graduationIG.src = "graduation.jpg"
 	document.addEventListener("keydown",keyPush);
     document.addEventListener("keyup",keyLift);
     audio = [new Audio('1110 Theme.mp3'), new Audio('2110 Theme.mp3'), new Audio('2150 Theme.mp3'), new Audio('4102 Theme.mp3'), new Audio('OS Theme.mp3')];
@@ -182,7 +185,14 @@ function game(){
         ctx.fillStyle="black";
         ctx.drawImage(grimshawIG, 620, 120, 128, 256);
         ctx.drawImage(upPIG,500,400,115,250);//draw player
-	}
+    }
+    else if(escape && totalCorrect==15){
+        ctx.drawImage(graduationIG, 0, 0, canv.width, canv.height);
+        ctx.fillStyle="black";
+        ctx.drawImage(upPIG,500,400,115,250);//draw player
+
+
+    }
     else{
     ctx.drawImage(hallwayIG, 0, 0, canv.width, canv.height);
     ctx.fillStyle="black";
