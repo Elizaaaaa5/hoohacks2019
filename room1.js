@@ -55,8 +55,8 @@ room_four_questions = [["What is big-theta in terms of big O and big omega? \na)
                         ["What class of algorithm is Dijkstra's algorithm? \na) Dynamic programming \nb) Divide and conquer \nc) Greedy algorithm", "c"]]
 room5_count = 0;
 room_five_questions =  [["NOT SO FAST! YOU THOUGHT YOU COULD GRADUATE WITHOUT OPERATING SYSTEMS? THINK AGAIN!... Press 'a' to continue", "a"],
-                        ["Linux's Scheduler adjusts timeslices based on the number of processes running. When many are running, this adjustment is likely to improve... \na) the mean wait time experienced by processes \nb) the compute throughput of the system \nc) the fairness of the amounts of processor time given to each process over a long period of time \nd)  the amount of stack space required in the kernel", "a"],
-                        ["The XV6 scheduler scans the proc table looking for a ready to run process. This is slow and non scalable. An alternative that is faster is to: \na) Randomly select a task to run and run it. \nb) Maintain a linked list of ready to run processes and always run the first, and place newly ready processes at the end. \nc) Maintain a hash table of ready to run processes keyed on priority. \nd) Maintain a stack of proc table pointers and pop processes to run them and push when they are ready to run.", "b"]]
+                        ["Linux's Scheduler adjusts timeslices based on the number of processes running. When many are running, this adjustment is likely to improve... \na) The mean wait time experienced by processes \nb) The compute throughput of the system \nc) the fairness of the amounts of processor time given to each process over time", "a"],
+                        ["The XV6 scheduler scans the proc table looking for a ready to run process. This is slow! A faster way is to: \na) Randomly select a task to run. \nb) Maintain a linked list of ready to run processes and always run the first, and place newly ready processes at the end. \nc) Maintain a hash table of ready to run processes keyed on priority.", "b"]]
 answer = "";
 dir = "left";
 instructionsDone = false;
